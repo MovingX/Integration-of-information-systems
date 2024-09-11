@@ -1,4 +1,5 @@
 ```mermaid
+sequenceDiagram
 
 @startuml
 left to right direction
