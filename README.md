@@ -1,5 +1,6 @@
-```mermaid
-sequenceDiagram
+![schema](schema.png)
+
+```plantuml
 
 @startuml
 left to right direction
