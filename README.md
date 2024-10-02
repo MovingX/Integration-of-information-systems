@@ -1,4 +1,4 @@
-![schema](schema.png)
+![schema](UseCase.png)
 
 ```plantuml
 
