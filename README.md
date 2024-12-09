@@ -27,6 +27,8 @@
 
 ![schema](UserCase_Diagrama.png)
 
+UserCase для этой структуры на [PlantTextUML](https://www.planttext.com/).
+
 ```plantuml
 
 @startuml
