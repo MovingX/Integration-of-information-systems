@@ -27,6 +27,49 @@
 
 ![schema](UserCase_Diagrama.png)
 
+```plantuml
+
+@startuml
+left to right direction
+actor "Клиент" as client
+actor "Администратор/Техническая поддержка" as adminSupport
+actor "Платежная система" as paymentSystem
+
+rectangle Автомойка {
+  usecase "UC1: Управление профилем" as UC1
+  usecase "UC2: Управление своими авто" as UC2
+  usecase "UC3: Выбор города" as UC3
+  usecase "UC4: Поиск и выбор автомойки" as UC4
+  usecase "UC5: Бронирование даты и времени" as UC5
+  usecase "UC6: Выбор услуги" as UC6
+  usecase "UC7: Выбор способа оплаты" as UC7
+  usecase "UC8: Оплата услуги" as UC8
+  usecase "UC9: Отмена бронирования" as UC9
+  usecase "UC10: Управление бронированиями" as UC10
+  usecase "UC11: Создание и управление скидками" as UC11
+  usecase "UC12: Поддержка клиента" as UC12
+}
+
+client --> UC1
+client --> UC2
+client --> UC3
+client --> UC4
+client --> UC5
+client --> UC6
+client --> UC7
+client --> UC8
+client --> UC9
+
+adminSupport --> UC10
+adminSupport --> UC11
+adminSupport --> UC12
+
+UC7 --> paymentSystem
+UC8 --> paymentSystem
+@enduml
+
+```
+
 ## 🗄️ ERD (Entity-Relationship Diagram)
 Диаграмма структуры базы данных с основными сущностями, такими как "Клиенты", "Бронирования", "Автомойки", "Услуги".
 
