@@ -277,6 +277,8 @@ UC8 --> paymentSystem
 
 ## 🗄️ ERD (Entity-Relationship Diagram)
 
+![schema](ERD.png)
+
 ## Описание таблиц
 
 ### 1. **Пользователь**
