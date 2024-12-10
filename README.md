@@ -412,9 +412,9 @@ Rel(системаПушУведомлений, администратор_те�
 
 ## 🔄 Sequence Diagrams
 
-Sequence Diagrams для этой структуры на [PlantTextUML](https://www.plantuml.com/plantuml/uml/). 🔗
-
 ![schema](SequenceDiagrams.png)
+
+Sequence Diagrams для этой структуры на [PlantTextUML](https://www.plantuml.com/plantuml/uml/). 🔗
 
 ```plantuml
 
