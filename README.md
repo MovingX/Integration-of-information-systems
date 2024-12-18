@@ -425,65 +425,65 @@ ERD для этой структуры на [dbdiagram.io](https://dbdiagram.io/
 
 ```plaintext
 
-Table Пользователь {
+Table User {
   id int [pk]
-  имя varchar
+  name varchar
   email varchar
-  телефон varchar
-  пароль varchar
+  phone varchar
+  password varchar
 }
 
-Table Автомобиль {
+Table Car {
   id int [pk]
-  пользователь_id int [ref: > Пользователь.id]
-  марка varchar
-  модель varchar
-  год_выпуска date
-  госномер varchar
-  цвет varchar
+  user_id int [ref: > User.id]
+  make varchar
+  model varchar
+  year date
+  license_plate varchar
+  color varchar
 }
 
-Table Услуга {
+Table Service {
   id int [pk]
-  название varchar
-  описание text
-  цена decimal
+  name varchar
+  description text
+  price decimal
 }
 
-Table Запись {
+Table Booking {
   id int [pk]
-  пользователь_id int [ref: > Пользователь.id]
-  автомобиль_id int [ref: > Автомобиль.id]
-  услуга_id int [ref: > Услуга.id]
-  статус boolean
-  дата datetime
-  статус_оплаты boolean
+  user_id int [ref: > User.id]
+  car_id int [ref: > Car.id]
+  service_id int [ref: > Service.id]
+  status boolean
+  date datetime
+  payment_status boolean
 }
 
-Table Платеж {
+Table Payment {
   id int [pk]
-  запись_id int [ref: > Запись.id]
-  сумма decimal
-  дата_платежа datetime
-  метод_оплаты varchar
+  booking_id int [ref: > Booking.id]
+  amount decimal
+  payment_date datetime
+  payment_method varchar
 }
 
-Table Отзыв {
+Table Review {
   id int [pk]
-  пользователь_id int [ref: > Пользователь.id]
-  запись_id int [ref: > Запись.id]
-  оценка int
-  комментарий text
+  user_id int [ref: > User.id]
+  booking_id int [ref: > Booking.id]
+  rating int
+  comment text
 }
 
-Table Запрос_в_техподдержку {
+Table Support_Request {
   id int [pk]
-  пользователь_id int [ref: > Пользователь.id]
-  тема varchar
-  описание text
-  статус boolean
-  дата_создания datetime
-  ответ text
+  user_id int [ref: > User.id]
+  subject varchar
+  description text
+  status boolean
+  creation_date datetime
+  response text
 }
 
 ```
