@@ -73,6 +73,56 @@ UC7 --> paymentSystem
 UC8 --> paymentSystem
 @enduml
 
+
+
+@startuml
+left to right direction
+actor "Клиент" as client
+actor "Администратор/Техническая поддержка" as adminSupport
+actor "Платежная система" as paymentSystem
+
+rectangle Автомойка {
+  usecase "UC1: Управление профилем" as UC1
+  usecase "UC2: Управление своими авто" as UC2
+  usecase "UC3: Бронирование" as UC3
+  
+  usecase "UC4: Выбор города" as UC4
+  usecase "UC5: Выбор автомойки" as UC5
+  usecase "UC6: Выбор услуги" as UC6
+  usecase "UC7: Выбор даты и времени" as UC7
+  usecase "UC8: Отмена бронирования" as UC8
+  
+  usecase "UC9: Выбор способа оплаты" as UC9
+  usecase "UC10: Оплата услуги" as UC10
+  
+  usecase "UC11: Управление бронированиями" as UC11
+  usecase "UC12: Создание и управление скидками" as UC12
+  usecase "UC13: Поддержка клиента" as UC13
+}
+
+
+client --> UC1
+client --> UC2
+client --> UC3
+
+UC3 --> UC4
+UC4 --> UC5
+UC3 --> UC6
+UC3 --> UC7
+UC3 <-- UC8
+
+client --> UC9
+UC9 --> UC10
+
+adminSupport --> UC11
+adminSupport --> UC12
+adminSupport --> UC13
+
+
+UC10 --> paymentSystem
+@enduml
+
+
 ```
 
 </details>
