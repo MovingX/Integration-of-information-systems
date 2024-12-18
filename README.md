@@ -38,48 +38,7 @@ UserCase для этой структуры на [PlantTextUML](https://www.plan
 left to right direction
 actor "Клиент" as client
 actor "Администратор/Техническая поддержка" as adminSupport
-actor "Платежная система" as paymentSystem
-
-rectangle Автомойка {
-  usecase "UC1: Управление профилем" as UC1
-  usecase "UC2: Управление своими авто" as UC2
-  usecase "UC3: Выбор города" as UC3
-  usecase "UC4: Поиск и выбор автомойки" as UC4
-  usecase "UC5: Бронирование даты и времени" as UC5
-  usecase "UC6: Выбор услуги" as UC6
-  usecase "UC7: Выбор способа оплаты" as UC7
-  usecase "UC8: Оплата услуги" as UC8
-  usecase "UC9: Отмена бронирования" as UC9
-  usecase "UC10: Управление бронированиями" as UC10
-  usecase "UC11: Создание и управление скидками" as UC11
-  usecase "UC12: Поддержка клиента" as UC12
-}
-
-client --> UC1
-client --> UC2
-client --> UC3
-client --> UC4
-client --> UC5
-client --> UC6
-client --> UC7
-client --> UC8
-client --> UC9
-
-adminSupport --> UC10
-adminSupport --> UC11
-adminSupport --> UC12
-
-UC7 --> paymentSystem
-UC8 --> paymentSystem
-@enduml
-
-
-
-@startuml
-left to right direction
-actor "Клиент" as client
-actor "Администратор/Техническая поддержка" as adminSupport
-actor "Платежная система" as paymentSystem
+rectangle "Платежная система" as paymentSystem
 
 rectangle Автомойка {
   usecase "UC1: Управление профилем" as UC1
@@ -105,14 +64,14 @@ client --> UC1
 client --> UC2
 client --> UC3
 
-UC3 --> UC4
-UC4 --> UC5
-UC3 --> UC6
-UC3 --> UC7
-UC3 <-- UC8
+UC3 ..> UC4:(include)
+UC4 ..> UC5:(include)
+UC3 ..> UC6:(include)
+UC3 ..> UC7:(include)
+UC3 <.. UC8:(exclude)
 
 client --> UC9
-UC9 --> UC10
+UC9 ..> UC10:(include)
 
 adminSupport --> UC11
 adminSupport --> UC12
@@ -121,7 +80,6 @@ adminSupport --> UC13
 
 UC10 --> paymentSystem
 @enduml
-
 
 ```
 
